@@ -57,6 +57,9 @@ body{
     color:#4cCEE8;
 }
 
+.wrapper .header .header-menu ul{
+    display: flex;
+}
 .wrapper .header .header-menu ul li a{
     background: #fff;
     color:#000;

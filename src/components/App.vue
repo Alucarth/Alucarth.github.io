@@ -10,9 +10,9 @@
           <i class="fas fa-bars"></i>
         </div>
         <ul>
-          <!-- <li><a href="#"><i class="fas fa-search"></i></a></li>  -->
-          <li><a href="#"><i class="fas fa-search"></i></a></li>
-           <!-- <li><a href="#"><i class="fas fa-power-off"></i></a></li> -->
+          <li><a href="#"><i class="fas fa-search"></i></a></li> 
+          <li><a href="#"><i class="fas fa-bell"></i></a></li>
+           <li><a href="#"><i class="fas fa-power-off"></i></a></li>
         </ul>
       </div>
     </div>
@@ -41,7 +41,7 @@
         </li>
         <li class="item" id="messages">
           <a href="#messages" class="menu-btn">
-            <i class="fas fa-user-circle"></i><span>Messages <i class="fas fa-chevron-down drop-down"></i></span>
+            <i class="fas fa-envelope"></i><span>Messages <i class="fas fa-chevron-down drop-down"></i></span>
           </a>
           <div class="sub-menu">
             <a href="#"><i class="fas fa-envelope"></i><span>New</span></a>
