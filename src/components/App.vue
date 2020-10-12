@@ -1,67 +1,87 @@
 <template>
-  <v-app id="inspire">
-    <v-app id="inspire">
+<div>
+  <!-- wrapper start -->
+  <div :class="drawer?'wrapper':'wrapper collapse'"  >
+    <!-- header menu start -->
+    <div class="header">
+      <div class="header-menu">
+        <div class="title">David <span> TOrrez</span></div>
+        <div class="sidebar-btn" @click="drawer=!drawer">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+          <!-- <li><a href="#"><i class="fas fa-search"></i></a></li>  -->
+          <li><a href="#"><i class="fas fa-search"></i></a></li>
+           <!-- <li><a href="#"><i class="fas fa-power-off"></i></a></li> -->
+        </ul>
+      </div>
+    </div>
+    <!-- header menu end -->
+    <!-- sidebar start -->
+    <div class="sidebar">
+      <div class="sidebar-menu">
+        <center class="profile">
+          <img src="img/profile.jpg" alt="">
+          <p>Full Stack Developer</p>
+        </center>
+        <li class="item">
+          <a href="#" class="menu-btn">
+            <i class="fas fa-desktop"></i><span>Dashboard</span>
+          </a>
+        </li>
+        <li class="item" id="profile">
+          <a href="#profile" class="menu-btn">
+            <i class="fas fa-user-circle"></i><span>Profile <i class="fas fa-chevron-down drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="#"><i class="fas fa-image"></i><span>Picture</span></a>
+            <a href="#"><i class="fas fa-address-card"></i><span>Info</span></a>
 
-      <v-main>
-        <v-container
-          class="fill-height"
-          fluid
-        >
-          <!-- <v-row
-            align="center"
-            justify="center"
-          >
-            <v-col cols="4" class="blue">
-              menu
-            </v-col>
-            <v-col cols="8" class="red">
-              contenido
-            </v-col>
-          </v-row> -->
-          <v-card
-              elevation="12"
-              width="20%"
-              flat
-            >
-            <v-navigation-drawer
-              floating
-              permanent
-            >
-              <v-list
-                dense
-                rounded
-              >
-                <v-list-item
-                  v-for="item in items"
-                  :key="item.title"
-                  link
-                >
-                  <v-list-item-icon>
-                    <v-icon>{{ item.icon }}</v-icon>
-                  </v-list-item-icon>
+          </div>
+        </li>
+        <li class="item" id="messages">
+          <a href="#messages" class="menu-btn">
+            <i class="fas fa-user-circle"></i><span>Messages <i class="fas fa-chevron-down drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="#"><i class="fas fa-envelope"></i><span>New</span></a>
+            <a href="#"><i class="fas fa-envelope-square"></i><span>Sent</span></a>
+            <a href="#"><i class="fas fa-exclamation-circle"></i><span>Spam</span></a>
 
-                  <v-list-item-content>
-                    <v-list-item-title>{{ item.title }}</v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list>
-            </v-navigation-drawer>
-          </v-card>
-          <v-divider></v-divider>
-          <v-card color="blue" width="77%">
-            contenido
-          </v-card>
+          </div>
+        </li>
+        <li class="item" id="settings">
+          <a href="#settings" class="menu-btn">
+            <i class="fas fa-cog"></i><span>Settings <i class="fas fa-chevron-down drop-down"></i></span>
+          </a>
+          <div class="sub-menu">
+            <a href="#"><i class="fas fa-lock"></i><span>Password</span></a>
+            <a href="#"><i class="fas fa-language"></i><span>Language</span></a>
 
-        </v-container>
-      </v-main>
+          </div>
+        </li>
+        <li class="item">
+          <a href="#" class="menu-btn">
+            <i class="fas fa-info-circle"></i><span>About</span>
+          </a>
+        </li>
+      </div>
+    </div>
+    <!-- sidebar end -->
+    <!-- main container start -->
+    <div class="main-container"></div>
+    <!-- main container end -->
+  </div>
+  <!-- wrapper end -->
 
-      <v-footer app>
-        <span>&copy; {{ new Date().getFullYear() }}</span>
-      </v-footer>
-    </v-app>
-  </v-app>
+
+</div>
 </template>
+
 <script>
+import '../app.css';
+// import '../debug.css';
+
 export default {
   props: {
     source: String,
@@ -72,8 +92,14 @@ export default {
       { title: 'Photos', icon: 'mdi-image' },
       { title: 'About', icon: 'mdi-help-box' },
     ],
-    drawer: null,
+    drawer: true,
   }),
+  methods:{
+    drawerhide()
+    {
+      this.drawer =!this.drawer;
+    }
+  }
 
 };
 </script>
