@@ -10,6 +10,7 @@
           <i class="fas fa-bars"></i>
         </div>
         <ul>
+          <li><input type="text" class="form-control"></li> 
           <li><a href="#"><i class="fas fa-search"></i></a></li> 
           <li><a href="#"><i class="fas fa-bell"></i></a></li>
            <li><a href="#"><i class="fas fa-power-off"></i></a></li>
@@ -26,12 +27,14 @@
         </center>
         <li class="item">
           <a href="#" class="menu-btn">
-            <i class="fas fa-desktop"></i><span>Dashboard</span>
+            <i class="fas fa-dashboard"></i><span>Dashboard</span>
           </a>
         </li>
         <li class="item" id="profile">
           <a href="#profile" class="menu-btn">
-            <i class="fas fa-user-circle"></i><span>Profile <i class="fas fa-chevron-down drop-down"></i></span>
+            <i class="fas fa-user-circle"></i>
+            <span>Profile <i class="fas fa-chevron-down drop-down"></i>
+            </span>
           </a>
           <div class="sub-menu">
             <a href="#"><i class="fas fa-image"></i><span>Picture</span></a>
@@ -41,7 +44,9 @@
         </li>
         <li class="item" id="messages">
           <a href="#messages" class="menu-btn">
-            <i class="fas fa-envelope"></i><span>Messages <i class="fas fa-chevron-down drop-down"></i></span>
+            <i class="fas fa-envelope"></i>
+              <span>Messages <i class="fas fa-chevron-down drop-down">
+              </i></span>
           </a>
           <div class="sub-menu">
             <a href="#"><i class="fas fa-envelope"></i><span>New</span></a>
@@ -52,7 +57,8 @@
         </li>
         <li class="item" id="settings">
           <a href="#settings" class="menu-btn">
-            <i class="fas fa-cog"></i><span>Settings <i class="fas fa-chevron-down drop-down"></i></span>
+            <i class="fas fa-cog"></i><span>Settings 
+              <i class="fas fa-chevron-down drop-down"></i></span>
           </a>
           <div class="sub-menu">
             <a href="#"><i class="fas fa-lock"></i><span>Password</span></a>
@@ -69,7 +75,9 @@
     </div>
     <!-- sidebar end -->
     <!-- main container start -->
-    <div class="main-container"></div>
+    <div class="main-container">
+
+    </div>
     <!-- main container end -->
   </div>
   <!-- wrapper end -->
