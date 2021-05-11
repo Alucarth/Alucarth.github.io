@@ -33,7 +33,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.21",
     "vue": "^2.6.11",
     "vuetify": "^2.3.3"
   }
