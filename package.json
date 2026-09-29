@@ -1,40 +1,28 @@
 {
-  "name": "webpack-keyrus",
+  "name": "alucarth-portfolio",
   "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --watch",
-    "dev": "webpack"
+  "private": true,
+  "type": "module",
+  "description": "Portfolio de Alucarth construido con Vue 3",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
   },
-  "keywords": [],
-  "author": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "vue",
+    "portfolio"
+  ],
+  "author": "Alucarth",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
-    "babel": "^6.23.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.1.0",
-    "css-loader": "^3.4.2",
-    "deepmerge": "^4.2.2",
-    "eslint": "^7.4.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "fibers": "^5.0.0",
-    "gulp-babel": "^8.0.0",
-    "sass": "^1.26.9",
-    "sass-loader": "^9.0.1",
-    "style-loader": "^1.1.3",
-    "vue-loader": "^15.9.3",
-    "vue-template-compiler": "^2.6.11",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.3.11"
+    "@vitejs/plugin-vue": "^6.0.0",
+    "vite": "^8.3.1"
   },
   "dependencies": {
-    "lodash": "^4.17.5",
-    "vue": "^2.6.11",
-    "vuetify": "^2.3.3"
+    "vue": "^3.5.13"
   }
 }

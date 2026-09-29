@@ -22,7 +22,7 @@
     <div class="sidebar">
       <div class="sidebar-menu">
         <center class="profile">
-          <img src="img/profile.jpg" alt="">
+          <img :src="profileImage" alt="">
           <p>Full Stack Developer</p>
         </center>
         <li class="item">
@@ -87,27 +87,14 @@
 </template>
 
 <script>
-import '../app.css';
-// import '../debug.css';
+import profileImage from '../../img/profile.jpg';
 
 export default {
-  props: {
-    source: String,
-  },
   data: () => ({
-    items: [
-      { title: 'Dashboard', icon: 'mdi-view-dashboard' },
-      { title: 'Photos', icon: 'mdi-image' },
-      { title: 'About', icon: 'mdi-help-box' },
-    ],
     drawer: true,
   }),
-  methods:{
-    drawerhide()
-    {
-      this.drawer =!this.drawer;
-    }
-  }
-
+  setup() {
+    return { profileImage };
+  },
 };
 </script>

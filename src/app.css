@@ -171,7 +171,7 @@ body{
     margin-top: 70px;
     margin-left: 250px;
     padding: 15px;
-    background: url('/img/pilgrimages_end_by_redbeatha-dc9ixv0.png')no-repeat;
+    background: url('../img/pilgrimages_end_by_redbeatha-dc9ixv0.png') no-repeat;
     background-size: cover;
     height: 100vh;
     transition: 0.3s;
