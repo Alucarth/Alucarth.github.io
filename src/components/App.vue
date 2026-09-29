@@ -40,33 +40,57 @@
               <i class="ki-outline ki-element-11" aria-hidden="true"></i><span>Dashboard</span>
             </a>
           </li>
-          <li class="item" id="profile">
-            <a href="#profile" class="menu-btn" aria-label="Profile">
+          <li class="item" :class="{ 'is-open': openMenu === 'profile' }">
+            <button
+              class="menu-btn"
+              type="button"
+              aria-label="Profile"
+              :aria-expanded="openMenu === 'profile'"
+              aria-controls="profile-submenu"
+              @click="toggleMenu('profile')"
+            >
               <i class="ki-outline ki-profile-circle" aria-hidden="true"></i>
-              <span>Profile <i class="ki-outline ki-arrow-down drop-down"></i></span>
-            </a>
-            <div class="sub-menu">
+              <span>Profile</span>
+              <i class="ki-outline ki-arrow-right drop-down" aria-hidden="true"></i>
+            </button>
+            <div id="profile-submenu" class="sub-menu" :inert="openMenu !== 'profile'">
               <a href="#"><i class="ki-outline ki-picture" aria-hidden="true"></i><span>Picture</span></a>
               <a href="#"><i class="ki-outline ki-address-book" aria-hidden="true"></i><span>Info</span></a>
             </div>
           </li>
-          <li class="item" id="messages">
-            <a href="#messages" class="menu-btn" aria-label="Messages">
+          <li class="item" :class="{ 'is-open': openMenu === 'messages' }">
+            <button
+              class="menu-btn"
+              type="button"
+              aria-label="Messages"
+              :aria-expanded="openMenu === 'messages'"
+              aria-controls="messages-submenu"
+              @click="toggleMenu('messages')"
+            >
               <i class="ki-outline ki-messages" aria-hidden="true"></i>
-              <span>Messages <i class="ki-outline ki-arrow-down drop-down"></i></span>
-            </a>
-            <div class="sub-menu">
+              <span>Messages</span>
+              <i class="ki-outline ki-arrow-right drop-down" aria-hidden="true"></i>
+            </button>
+            <div id="messages-submenu" class="sub-menu" :inert="openMenu !== 'messages'">
               <a href="#"><i class="ki-outline ki-message-add" aria-hidden="true"></i><span>New</span></a>
               <a href="#"><i class="ki-outline ki-message-text" aria-hidden="true"></i><span>Sent</span></a>
               <a href="#"><i class="ki-outline ki-information-2" aria-hidden="true"></i><span>Spam</span></a>
             </div>
           </li>
-          <li class="item" id="settings">
-            <a href="#settings" class="menu-btn" aria-label="Settings">
+          <li class="item" :class="{ 'is-open': openMenu === 'settings' }">
+            <button
+              class="menu-btn"
+              type="button"
+              aria-label="Settings"
+              :aria-expanded="openMenu === 'settings'"
+              aria-controls="settings-submenu"
+              @click="toggleMenu('settings')"
+            >
               <i class="ki-outline ki-setting-2" aria-hidden="true"></i>
-              <span>Settings <i class="ki-outline ki-arrow-down drop-down"></i></span>
-            </a>
-            <div class="sub-menu">
+              <span>Settings</span>
+              <i class="ki-outline ki-arrow-right drop-down" aria-hidden="true"></i>
+            </button>
+            <div id="settings-submenu" class="sub-menu" :inert="openMenu !== 'settings'">
               <a href="#"><i class="ki-outline ki-lock" aria-hidden="true"></i><span>Password</span></a>
               <a href="#"><i class="ki-outline ki-text" aria-hidden="true"></i><span>Language</span></a>
             </div>
@@ -98,7 +122,13 @@ import profileImage from '../../img/profile.jpg';
 export default {
   data: () => ({
     drawer: true,
+    openMenu: null,
   }),
+  methods: {
+    toggleMenu(menu) {
+      this.openMenu = this.openMenu === menu ? null : menu;
+    },
+  },
   setup() {
     return { profileImage };
   },
