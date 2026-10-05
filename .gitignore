@@ -1,5 +1,6 @@
 /node_modules
-/dist
+# dist/ se versiona a propósito: el hosting de destino solo acepta
+# archivos estáticos y no compila. Regenerar con `npm run build`.
 /public/hot
 /public/storage
 /public/bower_components
