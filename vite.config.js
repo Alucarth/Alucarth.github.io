@@ -37,6 +37,13 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       output: {
+        // 'cjs' en vez de 'es': un <script> clásico no está sujeto a CORS, así que
+        // el index.html también funciona abriendo el archivo con file:// (doble clic).
+        // No usar 'iife': Vite solo emite el .css aparte con formatos 'es'/'cjs'
+        // (con iife inyecta el CSS por JS y no genera assets/index.css).
+        format: 'cjs',
+        // Un solo archivo: el index.html publicado no tiene que adivinar chunks.
+        inlineDynamicImports: true,
         // Nombres fijos, sin hash, para que el HTML publicado siempre los encuentre.
         entryFileNames: 'assets/[name].js',
         chunkFileNames: 'assets/[name].js',

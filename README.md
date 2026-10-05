@@ -44,6 +44,22 @@ Las rutas internas del compilado son relativas (`base: './'`), así que el mismo
 `dist/` funciona en la raíz de un dominio, en `https://usuario.github.io/repo/` o
 en cualquier subcarpeta.
 
+### Por qué el `<script>` es clásico y va con `defer`
+
+Son dos detalles que parecen arbitrarios pero son obligatorios:
+
+- **Script clásico (`format: 'cjs'` en lugar de `'es'`).** Un `<script type="module">`
+  está sujeto a CORS, y al abrir el `index.html` con doble clic el origen es
+  `file://` (origen opaco), por lo que el navegador bloquea el módulo y solo se
+  ve el CSS. Un `<script>` clásico no tiene esa restricción. En `vite.config.js`
+  está comentado por qué no se puede usar `iife`: Vite solo extrae el CSS a un
+  archivo aparte con los formatos `es` y `cjs`; con `iife` lo inyecta por JS y
+  nunca genera `assets/index.css`.
+- **`defer` y al final del `<body>`.** Un script clásico en el `<head>` se ejecuta
+  antes de que exista `<div id="app">`, así que Vue no encuentra dónde montarse y
+  la página queda en blanco. Con `type="module"` esto no pasaba porque los módulos
+  son diferidos por definición.
+
 ### Hosting sin compilación
 
 `dist/` está versionado en git a propósito, ya que el destino de publicación
