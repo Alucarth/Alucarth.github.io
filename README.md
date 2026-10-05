@@ -18,6 +18,27 @@ El `index.html` de la raíz guarda las rutas del compilado, pero en desarrollo e
 plugin `publishedRootIndex` de `vite.config.js` las sustituye por
 `/src/index.js` al vuelo. No hay que editar nada a mano entre dev y build.
 
+## Editor y combinación de PDF
+
+La opción **Unir y ordenar** permite seleccionar o arrastrar varios archivos
+PDF, revisar sus páginas, cambiar su orden y descargar el resultado como un
+único documento. La lectura y exportación se realizan en el navegador con
+`pdf-lib`, y `pdfjs-dist` renderiza la página seleccionada para la vista previa.
+Los archivos se conservan solo en memoria durante la sesión y no se envían ni
+guardan en un servidor.
+
+La exportación copia en bloque las páginas seleccionadas de cada documento para
+reutilizar sus recursos compartidos (como imágenes y fuentes) y evitar hacer
+crecer innecesariamente el PDF. Durante el proceso se muestra una ventana con
+el estado y el avance por etapas.
+
+Para que el navegador pueda cargar el worker de PDF.js, usa la aplicación por
+HTTP/HTTPS (`npm run dev` o el sitio publicado); los navegadores bloquean ese
+worker cuando el HTML se abre directamente con `file://`.
+
+El editor no modifica el contenido de las páginas; las funciones de edición de
+texto e imágenes quedan fuera de esta primera versión.
+
 ## Producción
 
 ```sh
